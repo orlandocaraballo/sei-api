@@ -9,6 +9,6 @@
   "author": "Orlando Caraballo",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.10"
+    "express": "^4.16.3"
   }
 }

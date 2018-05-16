@@ -1,10 +1,9 @@
 const express = require('express')
-const lodash = require('lodash')
 
 const app = express()
 
 app.get("/", (request, response) => {
-  response.send(lodash.without([1, 2, 3], 1))
+  response.json({ name : "orlando" })
 })
 
 app.listen(3000, () => {

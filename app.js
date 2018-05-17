@@ -1,13 +1,14 @@
 // require our packages
 const express = require('express')
 const fs = require('fs')
+const path = require('path')
 const ejs = require('ejs')
 const utils = require('./libraries/utils')
 
 // setup our app
 const encoding = 'utf8'
+const studentJSONPath = path.join(__dirname, 'data', 'students.json')
 const app = express()
-const studentsJSON = JSON.parse(fs.readFileSync('data/students.json', encoding))
 const port = process.env.PORT || 3000
 const indexTemplate = ejs.compile(fs.readFileSync('views/index.ejs', encoding))
 
@@ -16,30 +17,34 @@ app.use(express.static('public'))
 
 // set our routes
 app.get("/", (request, response) => {
-  response.end(indexTemplate({ 
-    title: "The title",
-    students: studentsJSON
-  }))
+  utils.loadJSON(studentJSONPath, (data) => {
+    response.end(indexTemplate({ 
+      title: "The title",
+      students: data
+    }))
+  })
 })
 
+// responds with all students data
 app.get("/students", (request, response) => {
-  response.json(studentsJSON)
+  utils.loadJSON(studentJSONPath, (data) => {
+    response.json(data)
+  })
 })
 
+// responds with random student data
 app.get("/students/random", (request, response) => {
-  response.json(studentsJSON[utils.random(0, studentsJSON.length)])
+  utils.loadJSON(studentJSONPath, (data) => {
+    response.json(data[utils.random(0, studentsJSON.length)])
+  })
 })
 
+// responds with a specific student's data
 app.get("/students/:id", (request, response) => {
-  console.log(utils.random(1,10))
-  console.log(request.params)
-  response.json(studentsJSON[request.params['id'] - 1])
+  utils.loadJSON(studentJSONPath, (data) => {
+    response.json(data[request.params['id'] - 1])
+  })
 })
-
-// app.get("/students/:name", (request, response) => {
-//   // Martin's code here
-//   response.json(studentsJSON[request.params['name']])
-// })
 
 app.listen(port, () => {
   console.log("We are all fired up")

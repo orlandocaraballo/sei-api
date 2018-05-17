@@ -5,10 +5,11 @@ const ejs = require('ejs')
 const utils = require('./utils')
 
 // setup our app
+const encoding = 'utf8'
 const app = express()
-const studentsJSON = JSON.parse(fs.readFileSync('students.json', 'utf8'))
+const studentsJSON = JSON.parse(fs.readFileSync('students.json', encoding))
 const port = process.env.PORT || 3000
-const indexTemplate = ejs.compile(fs.readFileSync('views/index.ejs', 'utf8'))
+const indexTemplate = ejs.compile(fs.readFileSync('views/index.ejs', encoding))
 
 // allows us to serve all files within public directory
 app.use(express.static('public'))
@@ -26,7 +27,7 @@ app.get("/students", (request, response) => {
 })
 
 app.get("/students/random", (request, response) => {
-  response.json(studentsJSON[utils.random(0, 9)])
+  response.json(studentsJSON[utils.random(0, studentsJSON.length)])
 })
 
 app.get("/students/:id", (request, response) => {

@@ -4,6 +4,7 @@ const utils = require('./utils')
 
 const app = express()
 const studentsJSON = JSON.parse(fs.readFileSync('students.json', 'utf8'))
+const port = process.env.PORT || 3000
 
 app.get("/students", (request, response) => {
   response.json(studentsJSON)
@@ -18,6 +19,6 @@ app.get("/students/:id", (request, response) => {
   response.json(studentsJSON[request.params['id'] - 1])
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("We are all fired up")
 })

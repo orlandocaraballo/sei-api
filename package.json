@@ -10,6 +10,8 @@
   "author": "Orlando Caraballo",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3"
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "handlebars": "^4.0.11"
   }
 }

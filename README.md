@@ -3,9 +3,9 @@
 Find out silly facts about your SEI classmates.
 
 
-To execute locally, run the express server by running the following command:
+To execute locally, run the node server by running the following command:
 
-```js
+```bash
 $ node app.js
 ```
 

@@ -13,7 +13,7 @@
   { "name" : "lauren", "gender" : "female", "known-for" : "loving gingers", "github" : "https://github.com/lmtracy" },
   { "name" : "aaron", "gender" : "male", "known-for" : "speaking on html5", "github" : "https://github.com/aaronmasih92" },
   { "name" : "stephen", "gender" : "male", "known-for" : "guy fieri", "github" : "https://github.com/Stephen-NYC" },
-  { "name" : "maz", "gender" : "male", "known-for" : "being the villain", "github" : "https://github.com/complexlogik" },
+  { "name" : "maz", "gender" : "male", "known-for" : "the anti-hero", "github" : "https://github.com/complexlogik" },
   { "name" : "hardik", "gender" : "male", "known-for" : "stealing large credit cards", "github" : "https://github.com/Triplepoint0" },
   { "name" : "mariia", "gender" : "female", "known-for" : "cake", "github" : "https://github.com/Maria108" },
   { "name" : "chris", "gender" : "male", "known-for" : "jurrasic park", "github" : "https://github.com/ckedd" },
@@ -22,3 +22,4 @@
   { "name" : "tony", "gender" : "male", "known-for" : "being better than all of us", "github" : "https://github.com/tonymacas" },
   { "name" : "minhal", "gender" : "male", "known-for" : "his kingship", "github" : "https://github.com/mag166" }
 ]
+

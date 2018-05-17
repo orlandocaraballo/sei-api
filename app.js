@@ -32,8 +32,14 @@ app.get("/students/random", (request, response) => {
 
 app.get("/students/:id", (request, response) => {
   console.log(utils.random(1,10))
+  console.log(request.params)
   response.json(studentsJSON[request.params['id'] - 1])
 })
+
+// app.get("/students/:name", (request, response) => {
+//   // Martin's code here
+//   response.json(studentsJSON[request.params['name']])
+// })
 
 app.listen(port, () => {
   console.log("We are all fired up")

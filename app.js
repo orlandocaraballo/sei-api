@@ -2,12 +2,12 @@
 const express = require('express')
 const fs = require('fs')
 const ejs = require('ejs')
-const utils = require('./utils')
+const utils = require('./libraries/utils')
 
 // setup our app
 const encoding = 'utf8'
 const app = express()
-const studentsJSON = JSON.parse(fs.readFileSync('students.json', encoding))
+const studentsJSON = JSON.parse(fs.readFileSync('data/students.json', encoding))
 const port = process.env.PORT || 3000
 const indexTemplate = ejs.compile(fs.readFileSync('views/index.ejs', encoding))
 

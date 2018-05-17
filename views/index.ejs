@@ -17,7 +17,10 @@
   
   <ul>
   <% students.forEach(function(student, index){ %>
-    <li><a href="/students/<%= index + 1%>"><%= student.name %></a></li>
+    <li>
+      <a href="/students/<%= index + 1%>"><%= student.name %></a> 
+      <a href="<%= student.github %>">Github</a>
+    </li>
   <% }) %>
   </ul>
 </body>

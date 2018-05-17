@@ -1,4 +1,4 @@
-# sei_api
+# sei-api
 
 Find out silly facts about your SEI classmates.
 

@@ -1,5 +1,4 @@
 [
-<<<<<<< HEAD
   { "name" : "yorvin", "gender" : "male", "known-for" : "handing out memes", "github" : "https://github.com/Yorvi" },
   { "name" : "rachel", "gender" : "female", "known-for" : "being confused", "github" : "https://github.com/rbressner" },
   { "name" : "michael s", "gender" : "male", "known-for" : "saying random stuff", "github" : "https://github.com/msalvatore22" },
@@ -14,7 +13,7 @@
   { "name" : "lauren", "gender" : "female", "known-for" : "loving gingers", "github" : "https://github.com/lmtracy" },
   { "name" : "aaron", "gender" : "male", "known-for" : "speaking on html5", "github" : "https://github.com/aaronmasih92" },
   { "name" : "stephen", "gender" : "male", "known-for" : "guy fieri", "github" : "https://github.com/Stephen-NYC" },
-  { "name" : "maz", "gender" : "male", "known-for" : "being the villain", "github" : "https://github.com/complexlogik" },
+  { "name" : "maz", "gender" : "male", "known-for" : "the anti-hero", "github" : "https://github.com/complexlogik" },
   { "name" : "hardik", "gender" : "male", "known-for" : "stealing large credit cards", "github" : "https://github.com/Triplepoint0" },
   { "name" : "mariia", "gender" : "female", "known-for" : "cake", "github" : "https://github.com/Maria108" },
   { "name" : "chris", "gender" : "male", "known-for" : "jurrasic park", "github" : "https://github.com/ckedd" },
@@ -23,28 +22,3 @@
   { "name" : "tony", "gender" : "male", "known-for" : "being better than all of us", "github" : "https://github.com/tonymacas" },
   { "name" : "minhal", "gender" : "male", "known-for" : "his kingship", "github" : "https://github.com/mag166" }
 ]
-=======
-  { "name" : "yorvin", "gender" : "male", "known-for" : "handing out memes" },
-  { "name" : "rachel", "gender" : "female", "known-for" : "being confused" },
-  { "name" : "michael s", "gender" : "male", "known-for" : "saying random stuff" },
-  { "name" : "michael m", "gender" : "male", "known-for" : "his alienware laptop" },
-  { "name" : "scott", "gender" : "male", "known-for" : "looking he's always sleepy" },
-  { "name" : "jonathan", "gender" : "male", "known-for" : "jokes" },
-  { "name" : "mada", "gender" : "female", "known-for" : "saying a lot of things in a short amount of time" },
-  { "name" : "cat", "gender" : "female", "known-for" : "making an edgy bakery" },
-  { "name" : "omar", "gender" : "male", "known-for" : "extreme gaming" },
-  { "name" : "rashid", "gender" : "male", "known-for" : "doing things recursively" },
-  { "name" : "md", "gender" : "male", "known-for" : "speaking about science" },
-  { "name" : "lauren", "gender" : "female", "known-for" : "loving gingers" },
-  { "name" : "aaron", "gender" : "male", "known-for" : "speaking on html5" },
-  { "name" : "stephen", "gender" : "male", "known-for" : "guy fieri" },
-  { "name" : "maz", "gender" : "male", "known-for" : "the anti-hero" },
-  { "name" : "hardik", "gender" : "male", "known-for" : "stealing large credit cards" },
-  { "name" : "mariia", "gender" : "female", "known-for" : "cake" },
-  { "name" : "chris", "gender" : "male", "known-for" : "jurrasic park" },
-  { "name" : "kevin", "gender" : "male", "known-for" : "being chill" },
-  { "name" : "martin", "gender" : "male", "known-for" : "pokemons" },
-  { "name" : "tony", "gender" : "male", "known-for" : "being better than all of us" },
-  { "name" : "minhal", "gender" : "male", "known-for" : "his kingship" }
-]
->>>>>>> b355ea6326009df313271feab9d7bb5217f6e2a3

@@ -46,6 +46,11 @@ app.get("/students/:id", (request, response) => {
   })
 })
 
+// app.get("/students/:name", (request, response) => {
+//   // Martin's code here
+//   response.json(studentsJSON[request.params['name']])
+// })
+
 app.listen(port, () => {
   console.log("We are all fired up")
 })

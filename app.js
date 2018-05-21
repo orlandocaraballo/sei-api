@@ -15,6 +15,13 @@ const indexTemplate = ejs.compile(fs.readFileSync('views/index.ejs', encoding))
 // allows us to serve all files within public directory
 app.use(express.static('public'))
 
+// enable CORS
+app.use(function(request, response, next) {
+  response.header("Access-Control-Allow-Origin", "*");
+  response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 // set our routes
 app.get("/", (request, response) => {
   utils.loadJSON(studentJSONPath, (data) => {

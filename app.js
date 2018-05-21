@@ -16,7 +16,7 @@ const indexTemplate = ejs.compile(fs.readFileSync('views/index.ejs', encoding))
 app.use(express.static('public'))
 
 // enable CORS
-app.use(function(request, response, next) {
+app.use((request, response, next) => {
   response.header("Access-Control-Allow-Origin", "*");
   response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();

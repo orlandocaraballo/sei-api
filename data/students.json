@@ -21,4 +21,5 @@
   { "name" : "martin", "gender" : "male", "known-for" : "pokemons", "github" : "https://github.com/mr-martinsosa", "slack-handle" : "`@.martin`" },
   { "name" : "tony", "gender" : "male", "known-for" : "being better than all of us", "github" : "https://github.com/tonymacas", "slack-handle" : "`@Tony Macas`" },
   { "name" : "minhal", "gender" : "male", "known-for" : "his kingship", "github" : "https://github.com/mag166", "slack-handle" : "`@Minhal Gardezi`" }
+  { "name" : "kay", "gender" : "female", "known-for" : "being the most edge case", "github" : "https://github.com/mokaymokay", "slack-handle" : "`@kay`" }
 ]

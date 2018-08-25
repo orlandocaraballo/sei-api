@@ -1,0 +1,14 @@
+[
+  { "name" : "anna", "gender" : "female", "known-for" : "being a data master", "github" : "https://github.com/tribbyfam", "slack-handle" : "@Anna" },
+  { "name" : "kevin", "gender" : "male", "known-for" : "sabotaging his hdmi port", "github" : "https://github.com/kevinwong247", "slack-handle" : "@Kevin Wong" },
+  { "name" : "pablo", "gender" : "male", "known-for" : "being two days ahead", "github" : "https://github.com/PabloDeLaCruz1", "slack-handle" : "@Pablo De La Cruz" },
+  { "name" : "janice", "gender" : "female", "known-for" : "raising her hand", "github" : "https://github.com/Janice-Hughes", "slack-handle" : "@Janice Hughes" },
+  { "name" : "garth", "gender" : "male", "known-for" : "breaking it down", "github" : "https://github.com/BlackPanther74", "slack-handle" : "@Garth Puckerin" },
+  { "name" : "richard", "gender" : "male", "known-for" : "understanding groot language", "github" : "https://github.com/spoccomp", "slack-handle" : "@Richard Trapanese" },
+  { "name" : "reynaldo", "gender" : "male", "known-for" : "speaking groot language", "github" : "https://github.com/panaminer08", "slack-handle" : "@Rey  " },
+  { "name" : "diana", "gender" : "female", "known-for" : "paying attention in class", "github" : "https://github.com/DianaCanCode", "slack-handle" : "@Diana" },
+  { "name" : "zaheen", "gender" : "male", "known-for" : "using trigonometry", "github" : "https://github.com/ZAhmed95", "slack-handle" : "@Zaheen Ahmed" },
+  { "name" : "franklin", "gender" : "male", "known-for" : "sleeping a lot", "github" : "https://github.com/fbado66", "slack-handle" : "@Fbado66" },
+  { "name" : "marlon", "gender" : "male", "known-for" : "having two names", "github" : "https://github.com/mrdbrg", "slack-handle" : "@Marlon" },
+  { "name" : "zach", "gender" : "male", "known-for" : "being a pokemon master", "github" : "https://github.com/Zrondos", "slack-handle" : "@Zach" }
+]

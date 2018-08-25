@@ -53,6 +53,7 @@ app.get("/students/:id", (request, response) => {
   })
 })
 
-app.listen(port, () => {
-  console.log("We are all fired up")
+// listener fires when server is first fired up
+app.listen(port, (request, response) => {
+  console.log(`We are all fired up on port: http://localhost:${port}/`)
 })

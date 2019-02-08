@@ -1,6 +1,6 @@
 # sei-api
 
-Find out silly facts about your SEI classmates.
+Find out silly facts about your SEI classmates. Intended to be a repository for learning how to build a simple API in Express.js.
 
 ## Installation
 

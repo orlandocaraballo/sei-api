@@ -23,41 +23,14 @@ module.exports.random = (min, max) => {
 // loads json file from filepath then executes callback
 module.exports.loadJSON = (filepath, callback) => {
   fs.readFile(filepath, (error, data) => {
-    if (error) throw error
+    if (error) {
+      throw error;
+    }
     
     callback(JSON.parse(data))
   })
 }
 
-// loads "edge case" json file asynchronously
-// TODO: convert to promise
-module.exports.loadFirstCohortJSON = (callback) => {
-  this.loadJSON(this.FIRST_COHORT_JSON_PATH, callback);
-}
-
-// loads "edge case" json file synchronously
-module.exports.loadFirstCohortJSONSync = () => {
-  return JSON.parse(fs.readFileSync(this.FIRST_COHORT_JSON_PATH, ENCODING));
-}
-
-// loads "methods" json file asynchronously
-// TODO: convert to promise
-module.exports.loadSecondCohortJSON = (callback) => {
-  this.loadJSON(this.SECOND_COHORT_JSON_PATH, callback);
-}
-
-// loads "methods" json file synchronously
-module.exports.loadSecondCohortJSONSync = () => {
-  return JSON.parse(fs.readFileSync(this.SECOND_COHORT_JSON_PATH, ENCODING));
-}
-
-// loads "sei-nov" json file asynchronously
-// TODO: convert to promise
-module.exports.loadThirdCohortJSON = (callback) => {
-  this.loadJSON(this.THIRD_COHORT_JSON_PATH, callback);
-}
-
-// loads "sei-nov" json file synchronously
-module.exports.loadThirdCohortJSONSync = () => {
-  return JSON.parse(fs.readFileSync(this.THIRD_COHORT_JSON_PATH, ENCODING));
+module.exports.loadJSONSync = (filepath) => {
+  return JSON.parse(fs.readFileSync(filepath, ENCODING));
 }

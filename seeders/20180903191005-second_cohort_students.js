@@ -7,7 +7,7 @@ const Cohort = require('../models').Cohort;
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     // load our students from second cohort json file
-    const secondCohortJSON = utils.loadSecondCohortJSONSync();
+    const secondCohortJSON = utils.loadJSONSync(utils.SECOND_COHORT_JSON_PATH);
 
     // wait to find second cohort
     let secondCohort = await Cohort.findOne({

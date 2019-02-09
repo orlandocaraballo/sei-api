@@ -11,6 +11,7 @@ module.exports.SECOND_COHORT_NAME = 'methods';
 module.exports.THIRD_COHORT_NAME = 'sei-nov';
 
 // sets json path of students
+module.exports.COHORTS_JSON_PATH = path.join(__dirname, '..', 'data', 'cohorts.json')
 module.exports.FIRST_COHORT_JSON_PATH = path.join(__dirname, '..', 'data', `${ this.FIRST_COHORT_NAME }.json`);
 module.exports.SECOND_COHORT_JSON_PATH = path.join(__dirname, '..', 'data', `${ this.SECOND_COHORT_NAME }.json`);
 module.exports.THIRD_COHORT_JSON_PATH = path.join(__dirname, '..', 'data', `${ this.THIRD_COHORT_NAME }.json`);
@@ -26,7 +27,7 @@ module.exports.loadJSON = (filepath, callback) => {
     if (error) {
       throw error;
     }
-    
+
     callback(JSON.parse(data))
   })
 }

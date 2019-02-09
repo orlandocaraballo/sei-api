@@ -15,7 +15,6 @@ const Cohort = models.Cohort;
 
 // setup our app
 const encoding = 'utf8';
-const studentJSONPath = path.join(__dirname, 'data', 'students.json');
 const app = express();
 const port = process.env.PORT || 3000;
 

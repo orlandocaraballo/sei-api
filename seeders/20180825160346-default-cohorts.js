@@ -5,19 +5,19 @@ const utils = require(path.join(__dirname, '..', 'libraries', 'utils'));
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-      return queryInterface.bulkInsert('Cohorts', [{
-        name: utils.FIRST_COHORT_NAME,
+    // load cohorts from cohorts data file
+    //  then transform them into cohort objects that can be used by sequelize
+    //  to populate the database
+    const cohortObjects = utils.loadJSONSync(utils.COHORTS_JSON_PATH).map(cohort => {
+      return {
+        name: cohort,
         createdAt: Sequelize.fn('now'),
         updatedAt: Sequelize.fn('now')
-      }, {
-        name: utils.SECOND_COHORT_NAME,
-        createdAt: Sequelize.fn('now'),
-        updatedAt: Sequelize.fn('now')
-      }, {
-        name: utils.THIRD_COHORT_NAME,
-        createdAt: Sequelize.fn('now'),
-        updatedAt: Sequelize.fn('now')
-      }], {});
+      };
+    })
+
+    // insert cohorts into database using objects created above
+    return queryInterface.bulkInsert('Cohorts', cohortObjects, {});
   },
 
   down: (queryInterface, Sequelize) => {

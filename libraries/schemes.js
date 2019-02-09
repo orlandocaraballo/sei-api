@@ -15,7 +15,7 @@ module.exports.student = {
 };
 
 module.exports.cohort = {
-  // include only id, namd and associated students
+  // include only id, name and associated students
   include: ['id', 'name', 'Students'],
   // use lowercase association name based on JSON conventions
   as: { Students: 'students' },

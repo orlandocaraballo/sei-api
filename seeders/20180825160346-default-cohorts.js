@@ -13,6 +13,10 @@ module.exports = {
         name: utils.SECOND_COHORT_NAME,
         createdAt: Sequelize.fn('now'),
         updatedAt: Sequelize.fn('now')
+      }, {
+        name: utils.THIRD_COHORT_NAME,
+        createdAt: Sequelize.fn('now'),
+        updatedAt: Sequelize.fn('now')
       }], {});
   },
 

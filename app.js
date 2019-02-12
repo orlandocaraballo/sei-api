@@ -107,13 +107,14 @@ app.get("/students/:id", (request, response) => {
         const serializer = new Serializer(Student, schemes.student);
 
         // send a 200 response and serialize the returned student
-        return response.status(200).send(serializer.serialize(student));
+        response.status(200).send(serializer.serialize(student));
+        return;
       } else {
-
         // if student is not found then return error message
-        return response.status(400).send({ 
+        response.status(400).send({ 
           error: `Student with id of ${request.params['id']} does not exist` 
-        })
+        });
+        return;
       }
     })
     .catch(error => response.status(400).send(error));
@@ -171,11 +172,14 @@ app.get("/cohorts/:id", (request, response) => {
       if(cohort) {
         const serializer = new Serializer(Cohort, schemes.cohort);
 
-        return response.status(200).send(serializer.serialize(cohort));
+        response.status(200).send(serializer.serialize(cohort));
+        return;
       } else {
-        return response.status(400).send({ 
+
+        response.status(400).send({ 
           error: `Cohort with id of ${request.params['id']} does not exist` 
         });
+        return;
       }
     })
     .catch(error => response.status(400).send(error));

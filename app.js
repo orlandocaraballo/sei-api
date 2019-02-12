@@ -94,6 +94,7 @@ app.get("/students/:id", (request, response) => {
   // if element is not a number then return an error
   if(isNaN(request.params['id'])){ 
     response.status(400).send(utils.ID_NOT_A_NUMBER_ERROR);
+    return;
   }
 
   Student
@@ -153,10 +154,11 @@ app.get("/cohorts/random", (request, response) => {
 });
 
 // responds with a specific cohort's data
-app.get("/cohorts/:id", (request, response) => {
+app.get("/cohorts/:id", (request, response, next) => {
   // if element is not a number then return an error
   if(isNaN(request.params['id'])){ 
     response.status(400).send(utils.ID_NOT_A_NUMBER_ERROR);
+    return;
   }
 
   Cohort

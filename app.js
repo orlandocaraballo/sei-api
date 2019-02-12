@@ -93,7 +93,7 @@ app.get("/students/random", (request, response) => {
 app.get("/students/:id", (request, response) => {
   // if element is not a number then return an error
   if(isNaN(request.params['id'])){ 
-    response.status(400).send(utils.ID_DOES_NOT_EXIST_ERROR);
+    response.status(400).send(utils.ID_NOT_A_NUMBER_ERROR);
   }
 
   Student
@@ -156,7 +156,7 @@ app.get("/cohorts/random", (request, response) => {
 app.get("/cohorts/:id", (request, response) => {
   // if element is not a number then return an error
   if(isNaN(request.params['id'])){ 
-    response.status(400).send(utils.ID_DOES_NOT_EXIST_ERROR);
+    response.status(400).send(utils.ID_NOT_A_NUMBER_ERROR);
   }
 
   Cohort

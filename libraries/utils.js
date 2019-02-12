@@ -14,7 +14,7 @@ module.exports.THIRD_COHORT_NAME = 'sei-nov';
 module.exports.COHORTS_JSON_PATH = path.join(__dirname, '..', 'data', 'cohorts.json')
 
 // set error object
-module.exports.ID_DOES_NOT_EXIST_ERROR = {
+module.exports.ID_NOT_A_NUMBER_ERROR = {
   error: "Id is not a number"
 }
 

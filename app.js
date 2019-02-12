@@ -91,6 +91,11 @@ app.get("/students/random", (request, response) => {
 
 // responds with a specific student's data
 app.get("/students/:id", (request, response) => {
+  // if element is not a number then return an error
+  if(isNaN(request.params['id'])){ 
+    response.status(400).send(utils.ID_DOES_NOT_EXIST_ERROR);
+  }
+
   Student
     .findById(request.params['id'], {
       include: { model: Cohort }
@@ -114,7 +119,7 @@ app.get("/students/:id", (request, response) => {
 });
 
 // responds with all cohorts data
-app.get("/cohorts", (request, response) => {
+app.get("/cohorts", (request, response) => {  
   Cohort
     .all({
       // sort ascending by id
@@ -149,6 +154,11 @@ app.get("/cohorts/random", (request, response) => {
 
 // responds with a specific cohort's data
 app.get("/cohorts/:id", (request, response) => {
+  // if element is not a number then return an error
+  if(isNaN(request.params['id'])){ 
+    response.status(400).send(utils.ID_DOES_NOT_EXIST_ERROR);
+  }
+
   Cohort
     .findById(request.params['id'], {
       include: { model: Student }

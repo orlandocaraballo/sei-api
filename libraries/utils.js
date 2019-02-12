@@ -13,6 +13,11 @@ module.exports.THIRD_COHORT_NAME = 'sei-nov';
 // sets json path of students
 module.exports.COHORTS_JSON_PATH = path.join(__dirname, '..', 'data', 'cohorts.json')
 
+// set error object
+module.exports.ID_DOES_NOT_EXIST_ERROR = {
+  error: "Id is not a number"
+}
+
 // picks random number between min and max
 module.exports.random = (min, max) => {
   return Math.floor(Math.random() * (max - min)) + min;

@@ -187,5 +187,5 @@ app.get("/cohorts/:id", (request, response) => {
 
 // listener fires when server is first fired up
 app.listen(port, (request, response) => {
-  console.log(`We are all fired up on port: http://localhost:${port}/`);
+  console.log(`We are all fired up on port: ${port}/`);
 });

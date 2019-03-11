@@ -1,20 +1,22 @@
 // require our packages
 const express = require('express');
-const fs = require('fs');
-const path = require('path');
-const ejs = require('ejs');
-const utils = require('./libraries/utils');
-const Sequelize = require('sequelize')
-const models = require('./models/');
+const Sequelize = require('sequelize');
 const Serializer = require('sequelize-to-json');
+
+const utils = require('./libraries/utils');
+
+// load our models and schemes 
+const models = require('./models/');
 const schemes = require('./libraries/schemes');
 
-// loading our models
+// our routes
+const indexRouter = require('./routes/index');
+
+// for simplicity
 const Student = models.Student;
 const Cohort = models.Cohort;
 
 // setup our app
-const encoding = 'utf8';
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -29,29 +31,7 @@ app.use((request, response, next) => {
 });
 
 // set our routes
-app.get("/", (request, response) => {
-  // setup our template
-  const indexTemplate = ejs.compile(fs.readFileSync(
-    path.join(__dirname, 'views', 'index.ejs'),
-    encoding
-  ));
-
-  Student
-    .all({
-      // sort ascending by id
-      order: [
-        ['id', 'ASC']
-      ],
-      include: { model: Cohort }
-    })
-    .then(students => { 
-      response.end(indexTemplate({ 
-        title: "SEI | Homepage",
-        students: students
-      }));
-    })
-    .catch(error => response.status(400).send(error));
-});
+app.use('/', indexRouter);
 
 // responds with all students data
 app.get("/students", (request, response) => {

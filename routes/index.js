@@ -11,26 +11,24 @@ const Student = models.Student;
 const Cohort = models.Cohort;
 
 // set our routes
-router.get("/", (request, response) => {
+router.get('/', (request, response) => {
   // setup our template
-  const indexTemplate = ejs.compile(fs.readFileSync(
-    path.join(__dirname, '..', 'views', 'index.ejs'),
-    encoding
-  ));
+  const indexTemplate = ejs.compile(
+    fs.readFileSync(path.join(__dirname, '..', 'views', 'index.ejs'), encoding)
+  );
 
-  Student
-    .all({
-      // sort ascending by id
-      order: [
-        ['id', 'ASC']
-      ],
-      include: { model: Cohort }
-    })
-    .then(students => { 
-      response.end(indexTemplate({ 
-        title: "SEI | Homepage",
-        students: students
-      }));
+  Student.all({
+    // sort ascending by id
+    order: [['id', 'ASC']],
+    include: { model: Cohort }
+  })
+    .then(students => {
+      response.end(
+        indexTemplate({
+          title: 'SEI | Homepage',
+          students: students
+        })
+      );
     })
     .catch(error => response.status(400).send(error));
 });

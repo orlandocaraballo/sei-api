@@ -1,15 +1,93 @@
 [
-  { "name" : "ryan", "gender" : "male", "known-for" : "being completely non-specific about anything", "github" : "https://github.com/ryanrustler", "slack-handle" : "@Ryan Robinson" },
-  { "name" : "bryan", "gender" : "male", "known-for" : "being confused with ryan", "github" : "https://github.com/bryanjeanty", "slack-handle" : "@Bryan Jeanty" },
-  { "name" : "roig", "gender" : "male", "known-for" : "smiling a lot", "github" : "https://github.com/RoigRosa201", "slack-handle" : "@Roig Rosa" },
-  { "name" : "syed", "gender" : "male", "known-for" : "being the best dressed, yes even better than zak and mohamed", "github" : "https://github.com/sfahim", "slack-handle" : "@Syed Fahim" },
-  { "name" : "mohamed", "gender" : "male", "known-for" : "having a confused look on his face", "github" : "https://github.com/ouryj", "slack-handle" : "@oury j" },
-  { "name" : "fausto", "gender" : "male", "known-for" : "saving lives", "github" : "https://github.com/FaustoRosado", "slack-handle" : "@Fausto Rosado" },
-  { "name" : "bola", "gender" : "male", "known-for" : "being afraid of his computer", "github" : "https://github.com/bolamuyis", "slack-handle" : "@Bola" },
-  { "name" : "janelle", "gender" : "female", "known-for" : "reading 1000 books on the topic of linguistics", "github" : "https://github.com/JanelleEricksonGoettl", "slack-handle" : "@Janelle Erickson-Goettl" },
-  { "name" : "warren", "gender" : "male", "known-for" : "entering 25 different passwords to login to his computer", "github" : "https://github.com/probboy", "slack-handle" : "@Warren" },
-  { "name" : "aron", "gender" : "male", "known-for" : "being dink", "github" : "https://github.com/AronWinston", "slack-handle" : "@Aron Winston" },
-  { "name" : "berk", "gender" : "male", "known-for" : "having a computer that can game at 4k", "github" : "https://github.com/cnacir", "slack-handle" : "@Berk" },
-  { "name" : "johnny", "gender" : "male", "known-for" : "camping in 5 degree weather", "github" : "https://github.com/johnnyk1m", "slack-handle" : "@Johnny.K" },
-  { "name" : "wonjun", "gender" : "male", "known-for" : "wearing shorts in 5 degree weather", "github" : "https://github.com/wonjune12", "slack-handle" : "@Wonjun Choi" }
+  {
+    "name": "ryan",
+    "gender": "male",
+    "known-for": "being completely non-specific about anything",
+    "github": "https://github.com/ryanrustler",
+    "slack-handle": "@Ryan Robinson"
+  },
+  {
+    "name": "bryan",
+    "gender": "male",
+    "known-for": "being confused with ryan",
+    "github": "https://github.com/bryanjeanty",
+    "slack-handle": "@Bryan Jeanty"
+  },
+  {
+    "name": "roig",
+    "gender": "male",
+    "known-for": "smiling a lot",
+    "github": "https://github.com/RoigRosa201",
+    "slack-handle": "@Roig Rosa"
+  },
+  {
+    "name": "syed",
+    "gender": "male",
+    "known-for": "being the best dressed, yes even better than zak and mohamed",
+    "github": "https://github.com/sfahim",
+    "slack-handle": "@Syed Fahim"
+  },
+  {
+    "name": "mohamed",
+    "gender": "male",
+    "known-for": "having a confused look on his face",
+    "github": "https://github.com/ouryj",
+    "slack-handle": "@oury j"
+  },
+  {
+    "name": "fausto",
+    "gender": "male",
+    "known-for": "saving lives",
+    "github": "https://github.com/FaustoRosado",
+    "slack-handle": "@Fausto Rosado"
+  },
+  {
+    "name": "bola",
+    "gender": "male",
+    "known-for": "being afraid of his computer",
+    "github": "https://github.com/bolamuyis",
+    "slack-handle": "@Bola"
+  },
+  {
+    "name": "janelle",
+    "gender": "female",
+    "known-for": "reading 1000 books on the topic of linguistics",
+    "github": "https://github.com/JanelleEricksonGoettl",
+    "slack-handle": "@Janelle Erickson-Goettl"
+  },
+  {
+    "name": "warren",
+    "gender": "male",
+    "known-for": "entering 25 different passwords to login to his computer",
+    "github": "https://github.com/probboy",
+    "slack-handle": "@Warren"
+  },
+  {
+    "name": "aron",
+    "gender": "male",
+    "known-for": "being dink",
+    "github": "https://github.com/AronWinston",
+    "slack-handle": "@Aron Winston"
+  },
+  {
+    "name": "berk",
+    "gender": "male",
+    "known-for": "having a computer that can game at 4k",
+    "github": "https://github.com/cnacir",
+    "slack-handle": "@Berk"
+  },
+  {
+    "name": "johnny",
+    "gender": "male",
+    "known-for": "camping in 5 degree weather",
+    "github": "https://github.com/johnnyk1m",
+    "slack-handle": "@Johnny.K"
+  },
+  {
+    "name": "wonjun",
+    "gender": "male",
+    "known-for": "wearing shorts in 5 degree weather",
+    "github": "https://github.com/wonjune12",
+    "slack-handle": "@Wonjun Choi"
+  }
 ]

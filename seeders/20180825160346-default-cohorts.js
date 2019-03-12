@@ -14,7 +14,7 @@ module.exports = {
         createdAt: Sequelize.fn('now'),
         updatedAt: Sequelize.fn('now')
       };
-    })
+    });
 
     // insert cohorts into database using objects created above
     return queryInterface.bulkInsert('Cohorts', cohortObjects, {});

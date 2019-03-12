@@ -5,11 +5,11 @@ module.exports.student = {
   // let's exclude from the above the primary key and updated/created info
   exclude: ['@fk', 'createdAt', 'updatedAt'],
   // use lowercase association name based on JSON conventions
-  as: { Cohort: 'cohort'},
+  as: { Cohort: 'cohort' },
   assoc: {
     // scheme to be used for the associated `Cohort` instance
     Cohort: {
-      include: [ 'id', 'name' ]
+      include: ['id', 'name']
     }
   }
 };
@@ -23,7 +23,7 @@ module.exports.cohort = {
   assoc: {
     Students: {
       // exclude foreign key and created/updated info
-      exclude: [ '@fk', 'createdAt', 'updatedAt' ]
+      exclude: ['@fk', 'createdAt', 'updatedAt']
     }
   }
 };

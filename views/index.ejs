@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title><%= title %></title>
-  <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
-</head>
-<body>
-  <nav>
-    <a href="/students">All Students</a>
-    <a href="/cohorts">Students by Cohort</a>
-    <a href="/students/random">Random Student</a>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/students">All Students</a>
+      <a href="/cohorts">Students by Cohort</a>
+      <a href="/students/random">Random Student</a>
+    </nav>
 
-  <h1>Welcome to the SEI Student API</h1>
-  
-  <ul>
-  <% students.forEach(function(student, index){ %>
-    <li>
-      <a href="/students/<%= student.id %>"><%= student.name %></a> 
-      <a href="<%= student.github %>">Github</a>
-    </li>
-  <% }) %>
-  </ul>
-</body>
+    <h1>Welcome to the SEI Student API</h1>
+
+    <ul>
+      <% students.forEach(function(student, index){ %>
+      <li>
+        <a href="/students/<%= student.id %>"><%= student.name %></a>
+        <a href="<%= student.github %>">Github</a>
+      </li>
+      <% }) %>
+    </ul>
+  </body>
 </html>

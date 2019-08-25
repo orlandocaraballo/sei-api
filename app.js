@@ -1,11 +1,6 @@
 // require our packages
 const express = require("express");
 
-// routes
-const indexRouter = require("./routes/index");
-const studentsRouter = require("./routes/students");
-const cohortsRouter = require("./routes/cohorts");
-
 // setup our app
 const app = express();
 const port = process.env.PORT || 3000;
@@ -20,10 +15,10 @@ app.use((request, response, next) => {
   next();
 });
 
-// set our routes
-app.use("/", indexRouter);
-app.use("/students", studentsRouter);
-app.use("/cohorts", cohortsRouter);
+// mount our routes
+app.use("/", require("./routes/index"));
+app.use("/students", require("./routes/students"));
+app.use("/cohorts", require("./routes/cohorts"));
 
 // error middleware
 app.use(({ status, message }, request, response, next) => {

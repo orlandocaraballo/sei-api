@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const Sequelize = require("sequelize");
 const { Student, Cohort } = require("../models/");
 const {
   ID_NOT_A_NUMBER_ERROR,

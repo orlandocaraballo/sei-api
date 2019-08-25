@@ -50,14 +50,15 @@ router.get("/random", async (request, response, next) => {
 // // responds with a specific student's data
 router.get("/:id", async (request, response, next) => {
   let student;
+  const { id } = request.params;
 
   // if element is not a number then return an error
-  if (isNaN(request.params["id"])) {
+  if (isNaN(id)) {
     next({ status: 400, message: utils.ID_NOT_A_NUMBER_ERROR });
   }
 
   try {
-    student = await Student.findById(request.params["id"], {
+    student = await Student.findById(id, {
       include: { model: Cohort }
     });
   } catch (error) {
@@ -66,7 +67,7 @@ router.get("/:id", async (request, response, next) => {
 
   if (!student) {
     // if student is not found then return error message
-    next({ status: 400, message: `Student with id of ${request.params["id"]} does not exist` });
+    next({ status: 400, message: `Student with id of ${id} does not exist` });
   }
 
   // utilize student scheme to serialize Student data

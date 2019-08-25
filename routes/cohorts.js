@@ -45,14 +45,15 @@ router.get("/random", async (request, response, next) => {
 // responds with a specific cohort's data
 router.get("/:id", async (request, response, next) => {
   let cohort;
+  const { id } = request.params;
 
   // if element is not a number then return an error
-  if (isNaN(request.params["id"])) {
+  if (isNaN(id)) {
     next({ status: 400, message: utils.ID_NOT_A_NUMBER_ERROR });
   }
 
   try {
-    cohort = await Cohort.findById(request.params["id"], {
+    cohort = await Cohort.findById(id, {
       include: { model: Student }
     });
   } catch (error) {
@@ -63,7 +64,7 @@ router.get("/:id", async (request, response, next) => {
   if (!cohort) {
     next({
       status: 400,
-      message: `Cohort with id of ${request.params["id"]} does not exist`
+      message: `Cohort with id of ${id} does not exist`
     });
   }
 

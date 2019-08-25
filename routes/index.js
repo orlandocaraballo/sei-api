@@ -1,31 +1,29 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const ejs = require('ejs');
-const fs = require('fs');
-const path = require('path');
-const models = require('../models/');
+const ejs = require("ejs");
+const fs = require("fs");
+const path = require("path");
+const { Student, Cohort } = require("../models/");
 
 // utility vars
-const encoding = 'utf8';
-const Student = models.Student;
-const Cohort = models.Cohort;
+const encoding = "utf8";
 
 // set our routes
-router.get('/', (request, response) => {
+router.get("/", (request, response) => {
   // setup our template
   const indexTemplate = ejs.compile(
-    fs.readFileSync(path.join(__dirname, '..', 'views', 'index.ejs'), encoding)
+    fs.readFileSync(path.join(__dirname, "..", "views", "index.ejs"), encoding)
   );
 
   Student.all({
     // sort ascending by id
-    order: [['id', 'ASC']],
+    order: [["id", "ASC"]],
     include: { model: Cohort }
   })
     .then(students => {
       response.end(
         indexTemplate({
-          title: 'SEI | Homepage',
+          title: "SEI | Homepage",
           students: students
         })
       );

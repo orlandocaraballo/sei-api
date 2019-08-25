@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Cohort = sequelize.define(
-    "Cohort",
+    'Cohort',
     {
       name: DataTypes.STRING
     },

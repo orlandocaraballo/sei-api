@@ -9,26 +9,29 @@ const { Student, Cohort } = require("../models/");
 const encoding = "utf8";
 
 // set our routes
-router.get("/", (request, response) => {
+router.get("/", async (request, response, next) => {
+  let students;
   // setup our template
   const indexTemplate = ejs.compile(
     fs.readFileSync(path.join(__dirname, "..", "views", "index.ejs"), encoding)
   );
 
-  Student.all({
-    // sort ascending by id
-    order: [["id", "ASC"]],
-    include: { model: Cohort }
-  })
-    .then(students => {
-      response.end(
-        indexTemplate({
-          title: "SEI | Homepage",
-          students: students
-        })
-      );
+  try {
+    students = await Student.all({
+      // sort ascending by id
+      order: [["id", "ASC"]],
+      include: { model: Cohort }
+    });
+  } catch (error) {
+    next({ status: 400, message: error.message });
+  }
+
+  response.end(
+    indexTemplate({
+      title: "SEI | Homepage",
+      students: students
     })
-    .catch(error => response.status(400).send(error));
+  );
 });
 
 module.exports = router;

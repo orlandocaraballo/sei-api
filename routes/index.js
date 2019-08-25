@@ -1,19 +1,15 @@
-const express = require("express");
-const router = express.Router();
+const router = require("express").Router();
 const ejs = require("ejs");
 const fs = require("fs");
 const path = require("path");
 const { Student, Cohort } = require("../models/");
 
-// utility vars
-const encoding = "utf8";
-
 // set our routes
 router.get("/", async (request, response, next) => {
   let students;
   // setup our template
-  const indexTemplate = ejs.compile(
-    fs.readFileSync(path.join(__dirname, "..", "views", "index.ejs"), encoding)
+  const template = ejs.compile(
+    fs.readFileSync(path.join(__dirname, "..", "views", "index.ejs"), "utf8")
   );
 
   try {
@@ -27,7 +23,7 @@ router.get("/", async (request, response, next) => {
   }
 
   response.end(
-    indexTemplate({
+    template({
       title: "SEI | Homepage",
       students: students
     })

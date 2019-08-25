@@ -10,6 +10,10 @@ module.exports.FIRST_COHORT_NAME = "edge-case";
 module.exports.SECOND_COHORT_NAME = "methods";
 module.exports.THIRD_COHORT_NAME = "sei-nov";
 
+// for filtering sequelize column names
+module.exports.COHORT_ATTRIBUTES = ["id", "name"];
+module.exports.STUDENT_ATTRIBUTES = ["id", "name", "gender", "knownFor", "github", "slack"];
+
 // sets json path of students
 module.exports.COHORTS_JSON_PATH = path.join(__dirname, "..", "data", "cohorts.json");
 

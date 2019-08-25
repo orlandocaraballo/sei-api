@@ -1,19 +1,20 @@
-const express = require("express");
-const router = express.Router();
-const Sequelize = require("sequelize");
-const Serializer = require("sequelize-to-json");
+const router = require("express").Router();
 const { Student, Cohort } = require("../models/");
-const schemes = require("../libraries/schemes");
-const utils = require("../libraries/utils");
+const {
+  ID_NOT_A_NUMBER_ERROR,
+  COHORT_ATTRIBUTES,
+  STUDENT_ATTRIBUTES
+} = require("../libraries/utils");
 
 // responds with all students data
 router.get("/", async (request, response, next) => {
   let students;
   try {
     students = await Student.all({
+      attributes: STUDENT_ATTRIBUTES,
       // sort ascending by id
       order: [["id", "ASC"]],
-      include: { model: Cohort }
+      include: { model: Cohort, attributes: COHORT_ATTRIBUTES }
     });
   } catch (error) {
     next({
@@ -22,8 +23,7 @@ router.get("/", async (request, response, next) => {
     });
   }
 
-  // send a 200 response and serialize all students according to student scheme
-  response.status(200).send(Serializer.serializeMany(students, Student, schemes.student));
+  response.status(200).send(students);
 });
 
 // // responds with random student data
@@ -33,18 +33,15 @@ router.get("/random", async (request, response, next) => {
   try {
     // use pg random function to find random student
     student = await Student.findOne({
+      attributes: STUDENT_ATTRIBUTES,
       order: Sequelize.literal("random()"),
-      include: { model: Cohort }
+      include: { model: Cohort, attributes: COHORT_ATTRIBUTES }
     });
   } catch (error) {
     next({ status: 400, message: error.message });
   }
 
-  // utilize student scheme to serialize Student data
-  const serializer = new Serializer(Student, schemes.student);
-
-  // send a 200 response and serialize the returned student
-  response.status(200).send(serializer.serialize(student));
+  response.status(200).send(student);
 });
 
 // // responds with a specific student's data
@@ -54,12 +51,13 @@ router.get("/:id", async (request, response, next) => {
 
   // if element is not a number then return an error
   if (isNaN(id)) {
-    next({ status: 400, message: utils.ID_NOT_A_NUMBER_ERROR });
+    next({ status: 400, message: ID_NOT_A_NUMBER_ERROR });
   }
 
   try {
     student = await Student.findById(id, {
-      include: { model: Cohort }
+      attributes: STUDENT_ATTRIBUTES,
+      include: { model: Cohort, attributes: COHORT_ATTRIBUTES }
     });
   } catch (error) {
     next({ status: 400, message: error.message });
@@ -70,11 +68,7 @@ router.get("/:id", async (request, response, next) => {
     next({ status: 400, message: `Student with id of ${id} does not exist` });
   }
 
-  // utilize student scheme to serialize Student data
-  const serializer = new Serializer(Student, schemes.student);
-
-  // send a 200 response and serialize the returned student
-  response.status(200).send(serializer.serialize(student));
+  response.status(200).send(student);
 });
 
 module.exports = router;

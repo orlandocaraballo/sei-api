@@ -1,11 +1,14 @@
-const router = require("express").Router();
-const Sequelize = require("sequelize");
-const { Student, Cohort } = require("../models/");
-const {
+import express from "express";
+import Student from "../models/student.js";
+import Cohort from "../models/cohort.js";
+import Sequelize from "sequelize";
+import {
   ID_NOT_A_NUMBER_ERROR,
   COHORT_ATTRIBUTES,
   STUDENT_ATTRIBUTES
-} = require("../libraries/utils");
+} from "../libraries/utils.js";
+
+const router = express.Router();
 
 // responds with all students data
 router.get("/", async (request, response, next) => {
@@ -72,4 +75,4 @@ router.get("/:id", async (request, response, next) => {
   response.status(200).send(student);
 });
 
-module.exports = router;
+export default router;

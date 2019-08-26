@@ -1,8 +1,13 @@
-const router = require("express").Router();
-const ejs = require("ejs");
-const fs = require("fs");
-const path = require("path");
-const { Student, Cohort } = require("../models/");
+import express from "express";
+import ejs from "ejs";
+import fs from "fs";
+import path from "path";
+import Student from "../models/student.js";
+import Cohort from "../models/cohort.js";
+
+const router = express.Router();
+
+console.log(Student);
 
 // set our routes
 router.get("/", async (request, response, next) => {
@@ -30,4 +35,4 @@ router.get("/", async (request, response, next) => {
   );
 });
 
-module.exports = router;
+export default router;

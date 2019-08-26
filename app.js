@@ -1,5 +1,8 @@
-// require our packages
-const express = require("express");
+// import our packages
+import express from "express";
+import indexRouter from "./routes/index.js";
+import studentsRouter from "./routes/students.js";
+import cohortsRouter from "./routes/cohorts.js";
 
 // setup our app
 const app = express();
@@ -16,9 +19,9 @@ app.use((request, response, next) => {
 });
 
 // mount our routes
-app.use("/", require("./routes/index"));
-app.use("/students", require("./routes/students"));
-app.use("/cohorts", require("./routes/cohorts"));
+app.use("/", indexRouter);
+app.use("/students", studentsRouter);
+app.use("/cohorts", cohortsRouter);
 
 // error middleware
 app.use(({ status, message }, request, response, next) => {

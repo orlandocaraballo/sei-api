@@ -1,7 +1,7 @@
-'use strict';
-module.exports = (sequelize, DataTypes) => {
+"use strict";
+export default (sequelize, DataTypes) => {
   const Student = sequelize.define(
-    'Student',
+    "Student",
     {
       name: DataTypes.STRING,
       gender: DataTypes.STRING,

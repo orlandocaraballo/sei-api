@@ -37,7 +37,7 @@ router.get("/random", async (request, response, next) => {
       include: { model: Student, attributes: STUDENT_ATTRIBUTES }
     });
   } catch (error) {
-    next({ status: 400, status: error.message });
+    next({ status: 400, message: error.message });
   }
 
   response.status(200).send(cohort);

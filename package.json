@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "ejs": "^2.6.1",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "pg": "^7.4.3",
     "sequelize": "^4.38.0",
     "sequelize-cli": "^4.1.1",
